@@ -1,0 +1,173 @@
+openapi: 3.0.3
+info:
+  title: Laravel-Mongo-Sanctum-Api
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost/laravel-mongo-sanctum-api/public'
+paths:
+  /api/auth/login:
+    post:
+      summary: Login
+      operationId: login
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Email of the admin.'
+                  example: admin@admin.com
+                  nullable: false
+                password:
+                  type: string
+                  description: Password.
+                  example: admin@123
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+  /api/auth/logout:
+    get:
+      summary: Logout
+      operationId: logout
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The route laravel-mongo-sanctum-api/public/api/auth/logout could not be found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The route laravel-mongo-sanctum-api/public/api/auth/logout could not be found.'
+      tags:
+        - Endpoints
+      security: []
+  /api/auth/logout-from-all-device:
+    get:
+      summary: 'Logout Of All Devices'
+      operationId: logoutOfAllDevices
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The route laravel-mongo-sanctum-api/public/api/auth/logout-from-all-device could not be found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The route laravel-mongo-sanctum-api/public/api/auth/logout-from-all-device could not be found.'
+      tags:
+        - Endpoints
+      security: []
+  /api/vehicle/list:
+    get:
+      summary: List
+      operationId: list
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The route laravel-mongo-sanctum-api/public/api/vehicle/list could not be found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The route laravel-mongo-sanctum-api/public/api/vehicle/list could not be found.'
+      tags:
+        - Endpoints
+  '/api/vehicle/detail/{_id}':
+    get:
+      summary: Detail
+      operationId: detail
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The route laravel-mongo-sanctum-api/public/api/vehicle/detail/autem could not be found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The route laravel-mongo-sanctum-api/public/api/vehicle/detail/autem could not be found.'
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: _id
+        description: 'The ID of the .'
+        example: autem
+        required: true
+        schema:
+          type: string
+  /api/vehicle/create:
+    post:
+      summary: Create
+      operationId: create
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: 'Type of vehicle.'
+                  example: '2wheeler,3wheeler,4wheeler,heavyduty'
+                  nullable: false
+                brand:
+                  type: string
+                  description: 'Brand of vehicle.'
+                  example: Toyota
+                  nullable: false
+                model:
+                  type: string
+                  description: 'Model of vehicle.'
+                  example: Supra
+                  nullable: false
+              required:
+                - type
+                - brand
+                - model
+tags:
+  -
+    name: Endpoints
+    description: ''
